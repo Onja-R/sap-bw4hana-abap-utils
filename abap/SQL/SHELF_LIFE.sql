@@ -47,6 +47,7 @@ WITH w AS (
 SELECT 	
     a.0material,
     a.batch,
+	b.wm_bbsled,
     CASE 
         WHEN b.wm_bbsled IS NOT NULL AND w.mhdrz > 0 THEN TO_VARCHAR(ADD_MONTHS(b.wm_bbsled, -w.mhdrz), 'YYYYMM')
 		WHEN b.wm_bbsled IS NOT NULL THEN TO_VARCHAR(b.wm_bbsled, 'YYYYMM')
