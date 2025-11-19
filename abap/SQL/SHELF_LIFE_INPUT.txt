@@ -1,0 +1,25 @@
+input:
+
+Table wmaterial (
+	0material (char 40),
+	iprkz (char 1), 		--- type of duration 1 for months, 2 for days
+	mhdrz (dec 4, 0)		--- duration in montha or days
+)
+
+
+Table dbvmc1 (
+	0material (char 40),	
+	batch (char 10),
+	wm_bbsled (dats)		--- best before date
+)
+
+
+Table dmatdocb (
+	0material (char 40),
+	batch (char 10),
+	stockqty (dec 17, 3)	--- qty in stock for each batch of 0material
+)
+
+cdluomon is a type on 0CALMONTH
+
+end of input
