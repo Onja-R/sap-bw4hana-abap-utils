@@ -1,25 +1,40 @@
-input:
+# Database Schema Documentation
 
-Table wmaterial (
-	0material (char 40),
-	iprkz (char 1), 		--- type of duration 1 for months, 2 for days
-	mhdrz (dec 4, 0)		--- duration in montha or days
-)
+This document provides the schema details for the database tables used in the system.
 
+## Tables
 
-Table dbvmc1 (
-	0material (char 40),	
-	batch (char 10),
-	wm_bbsled (dats)		--- best before date
-)
+### `wmaterial`
 
+| Field     | Type     | Description                       |
+|-----------|----------|-----------------------------------|
+| `0material` | `char(40)` | Material ID                       |
+| `iprkz`     | `char(1)`  | Type of duration (1 for months, 2 for days) |
+| `mhdrz`     | `dec(4, 0)` | Duration in months or days        |
 
-Table dmatdocb (
-	0material (char 40),
-	batch (char 10),
-	stockqty (dec 17, 3)	--- qty in stock for each batch of 0material
-)
+---
 
-cdluomon is a type on 0CALMONTH
+### `dbvmc1`
 
-end of input
+| Field        | Type       | Description              |
+|--------------|------------|--------------------------|
+| `0material`  | `char(40)` | Material ID              |
+| `batch`      | `char(10)` | Batch ID                 |
+| `wm_bbsled`  | `dats`     | Best before date         |
+
+---
+
+### `dmatdocb`
+
+| Field      | Type        | Description                        |
+|------------|-------------|------------------------------------|
+| `0material` | `char(40)`  | Material ID                        |
+| `batch`    | `char(10)`  | Batch ID                           |
+| `stockqty` | `dec(17, 3)`| Quantity in stock for each batch of material |
+
+---
+
+### `cdluomon`
+
+- **Type**: `0CALMONTH`
+- **Description**: Represents a calendar month type.
